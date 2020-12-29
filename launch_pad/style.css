@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  background-image: url(https://thumbnails.production.thenounproject.com/ReG4pSToalBBuG_7mO1p8DQ-His=/fit-in/1000x1000/photos.production.thenounproject.com/photos/AEADB5B1-F6BF-4C19-A19A-1A2963B169DF.jpg);
+}
+.title {
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  color: aliceblue;
+}
+
+.launchpad {
+  margin: auto;
+  width: 70%;
+}
+
+.line {
+  display: flex;
+  justify-content: space-around;
+}
+
+.launchpad_key {
+  margin: 4px;
+  padding: 3rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.44);
+  border-radius: 0.7rem;
+  font-size: large;
+  color: aliceblue;
+  cursor: pointer;
+}
+.playing {
+  border: solid 4px gold;
+  box-shadow: 0 0 10px rgb(255, 240, 154);
+  transform: scale(1.1);
+}
+
+.launchpad_key:active {
+  border: solid 4px gold;
+  box-shadow: 0 0 10px rgb(255, 240, 154);
+  transform: scale(1.1);
+}

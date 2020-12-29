@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nature Sound</title>
+    <meta name="author" content="ThinkerRing🔔" />
+    <meta name="description" content="버튼을 누르며 자연의 소리를 들어보세요" />
+    <link rel="icon" type="image/png" href="imgs/" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="main.js" defer></script> -->
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">비오는 날</h1>
+    </header>
+    <main class="main">
+      <section class="launchpad">
+        <div class="line line_one">
+          <div data-key="81" data-key="55" class="launchpad_key">
+            Q
+            <span>blop</span>
+          </div>
+          <div data-key="87" data-key="56" class="launchpad_key">
+            W
+            <span>drop</span>
+          </div>
+          <div data-key="69" data-key="57" class="launchpad_key">
+            E
+            <span>spooky</span>
+          </div>
+        </div>
+        <div class="line line_two">
+          <div data-key="65" data-key="52" class="launchpad_key">
+            A
+            <span>splash</span>
+          </div>
+          <div data-key="83" data-key="53" class="launchpad_key">
+            S
+            <span>bubble</span>
+          </div>
+          <div data-key="68" data-key="54" class="launchpad_key">
+            D
+            <span>rain</span>
+          </div>
+        </div>
+        <div class="line line_three">
+          <div data-key="90" data-key="49" class="launchpad_key">
+            Z
+            <span>crickets</span>
+          </div>
+          <div data-key="88" data-key="50" class="launchpad_key">
+            X
+            <span>heavy</span>
+          </div>
+          <div data-key="67" data-key="51" class="launchpad_key">
+            C
+            <span>thunder</span>
+          </div>
+        </div>
+      </section>
+
+      <audio data-key="81" data-key="55" src="sounds/Blop.mp3"></audio>
+      <audio
+        data-key="87"
+        data-key="56"
+        src="sounds/Water Drop Sound High.mp3"
+      ></audio>
+      <audio
+        data-key="69"
+        data-key="57"
+        src="sounds/Spooky Water Drops.mp3"
+      ></audio>
+      <audio data-key="65" data-key="52" src="sounds/Water Splash.mp3"></audio>
+      <audio data-key="83" data-key="53" src="sounds/Bubbling.mp3"></audio>
+      <audio
+        data-key="68"
+        data-key="54"
+        src="sounds/Rain Background.mp3"
+      ></audio>
+      <audio
+        data-key="90"
+        data-key="49"
+        src="sounds/Light Rain And Crickets.mp3"
+      ></audio>
+      <audio
+        data-key="88"
+        data-key="50"
+        src="sounds/Heavy Rain Wind.mp3"
+      ></audio>
+      <audio data-key="67" data-key="51" src="sounds/Thunder Storm.mp3"></audio>
+    </main>
+  </body>
+  <script>
+    const keys = document.querySelectorAll(".launchpad_key");
+    function playSound(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+      if (!audio) return;
+      audio.currentTime = 0;
+      audio.play();
+      key.classList.add("playing");
+    }
+
+    function removeTransition(e) {
+      if (e.propertyName !== "transform") return;
+      this.classList.remove("playing");
+      // if(e.proportyName !== 'transition')
+    }
+
+    window.addEventListener("keydown", playSound);
+    keys.forEach((key) =>
+      key.addEventListener("transitionend", removeTransition)
+    );
+  </script>
+</html>
