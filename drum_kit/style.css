@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.keys {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 50vh 0;
+  text-align: center;
+}
+
+.key {
+  margin: 4px;
+  width: 7rem;
+  height: 6rem;
+  border: 3px solid black;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 48px;
+  /* transition: all 0.07s ease; */
+}
+.playing {
+  border: 4px solid gold;
+  box-shadow: 0 0 5px 5px rgb(255, 235, 120);
+  transform: scale(1.1);
+}
+
+kbd {
+  display: block;
+  color: aliceblue;
+}
+
+.sound {
+  display: block;
+  color: orange;
+  font-size: 18px;
+}
