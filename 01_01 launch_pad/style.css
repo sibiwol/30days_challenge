@@ -1,42 +1,87 @@
 body {
   margin: 0;
+  overflow: hidden;
   background-image: url(https://thumbnails.production.thenounproject.com/ReG4pSToalBBuG_7mO1p8DQ-His=/fit-in/1000x1000/photos.production.thenounproject.com/photos/AEADB5B1-F6BF-4C19-A19A-1A2963B169DF.jpg);
+  background-position: center;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
 }
-.title {
-  margin: 0;
-  padding: 2rem;
+
+.grid-container {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: 20% 1fr 1fr 1fr 20%;
+  grid-template-rows: repeat(5, 1fr);
+}
+.header {
+  grid-column: 1 / 6;
+  grid-row: 1;
+  align-self: center;
+  font-size: calc(1.5rem + 1vw);
+  font-weight: bold;
   text-align: center;
   color: aliceblue;
 }
-
-.launchpad {
-  margin: auto;
-  width: 70%;
-}
-
-.line {
-  display: flex;
-  justify-content: space-around;
-}
-
-.launchpad_key {
-  margin: 4px;
-  padding: 3rem;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.44);
+.key {
+  height: 4rem;
+  margin: 12px;
   border-radius: 0.7rem;
-  font-size: large;
+  background-color: rgba(0, 0, 0, 0.44);
+  font-size: calc(1rem + 1vw);
+  text-align: center;
   color: aliceblue;
   cursor: pointer;
 }
+.key_q {
+  grid-column: 2;
+  grid-row: 2;
+}
+.key_w {
+  grid-column: 3;
+  grid-row: 2;
+}
+.key_e {
+  grid-column: 4;
+  grid-row: 2;
+}
+.key_a {
+  grid-column: 2;
+  grid-row: 3;
+}
+.key_s {
+  grid-column: 3;
+  grid-row: 3;
+}
+.key_d {
+  grid-column: 4;
+  grid-row: 3;
+}
+.key_z {
+  grid-column: 2;
+  grid-row: 4;
+}
+.key_x {
+  grid-column: 3;
+  grid-row: 4;
+}
+.key_c {
+  grid-column: 4;
+  grid-row: 4;
+}
+
+span {
+  display: block;
+}
+
 .playing {
   border: solid 4px gold;
   box-shadow: 0 0 10px rgb(255, 240, 154);
   transform: scale(1.1);
 }
 
-.launchpad_key:active {
+/* .key:active {
   border: solid 4px gold;
   box-shadow: 0 0 10px rgb(255, 240, 154);
   transform: scale(1.1);
-}
+} */

@@ -8,10 +8,41 @@
     <meta name="description" content="버튼을 누르며 자연의 소리를 들어보세요" />
     <link rel="icon" type="image/png" href="imgs/" />
     <link rel="stylesheet" href="style.css" />
-    <!-- <script src="main.js" defer></script> -->
+    <script src="main.js" defer></script>
   </head>
   <body>
-    <header class="header">
+    <article class="grid-container">
+      <header class="header">비 오는 날</header>
+      <div data-key="81" class="key key_q" >Q
+        <span>blop</span>
+      </div>
+      <div data-key="87" class="key key_w">W
+        <span>drop</span>
+      </div>
+      <div data-key="69" class="key key_e">E
+        <span>spooky</span>
+      </div>
+      <div data-key="65" class="key key_a">A
+        <span>splash</span>
+      </div>
+      <div data-key="83" class="key key_s">S
+        <span>bubble</span>
+      </div>
+      <div data-key="68" class="key key_d">D
+        <span>rain</span>
+      </div>
+      <div data-key="90" class="key key_z">Z
+        <span>crickets</span>
+      </div>
+      <div data-key="88" class="key key_x">X
+        <span>heavy</span>
+      </div>
+      <div data-key="67" class="key key_c">C
+        <span>thunder</span>
+      </div>  
+    </article>
+    
+    <!-- <header class="header">
       <h1 class="title">비오는 날</h1>
     </header>
     <main class="main">
@@ -58,7 +89,7 @@
             <span>thunder</span>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <audio data-key="81" data-key="55" src="sounds/Blop.mp3"></audio>
       <audio
@@ -91,26 +122,4 @@
       <audio data-key="67" data-key="51" src="sounds/Thunder Storm.mp3"></audio>
     </main>
   </body>
-  <script>
-    const keys = document.querySelectorAll(".launchpad_key");
-    function playSound(e) {
-      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-      if (!audio) return;
-      audio.currentTime = 0;
-      audio.play();
-      key.classList.add("playing");
-    }
-
-    function removeTransition(e) {
-      if (e.propertyName !== "transform") return;
-      this.classList.remove("playing");
-      // if(e.proportyName !== 'transition')
-    }
-
-    window.addEventListener("keydown", playSound);
-    keys.forEach((key) =>
-      key.addEventListener("transitionend", removeTransition)
-    );
-  </script>
 </html>
