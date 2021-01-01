@@ -1,22 +1,26 @@
 "use strict";
 
+const keys = document.querySelectorAll(".key");
 function playSound(e) {
-  console.log(e);
-  // const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  // const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
-  // if (!audio) return; // stop function
-  // audio.currentTime = 0;
-  // audio.play();
-  // key.classList.add("playing");
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  key.classList.add("playing");
+
+  audio.addEventListener("ended", () => {
+    key.classList.remove("playing");
+  });
 }
 
-function removeTransitioned(e) {
+function play(e) {
   console.log(e);
-  e.classList.remove("playing");
 }
 
-const keys = document.querySelectorAll("launchpad_key");
+window.addEventListener("keydown", playSound);
 keys.forEach((key) => {
-  key.addEventListener("transitioned", removeTransitioned());
+  // console.log(key);
+  key.addEventListener("click", play);
 });
-window.addEventListener("keydown", playSound());
+// [].forEach.call(cols,function(col){ col.addEventListener("click",click,false); });
