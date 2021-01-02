@@ -4,15 +4,15 @@ body {
   background-image: url(https://thumbnails.production.thenounproject.com/ReG4pSToalBBuG_7mO1p8DQ-His=/fit-in/1000x1000/photos.production.thenounproject.com/photos/AEADB5B1-F6BF-4C19-A19A-1A2963B169DF.jpg);
   background-position: center;
   background-size: cover;
-  /* background-repeat: no-repeat; */
 }
 
 .grid-container {
   display: grid;
+  gap: 16px 16px;
   width: 100vw;
   height: 100vh;
   grid-template-columns: 20% 1fr 1fr 1fr 20%;
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: 15% 1fr 1fr 1fr 40%;
 }
 .header {
   grid-column: 1 / 6;
@@ -24,8 +24,10 @@ body {
   color: aliceblue;
 }
 .key {
-  height: 4rem;
-  margin: 12px;
+  position: relative;
+  width: 100%;
+  /* width: 12rem; */
+  padding-bottom: 100%;
   border-radius: 0.7rem;
   background-color: rgba(0, 0, 0, 0.44);
   font-size: calc(1rem + 1vw);
@@ -72,6 +74,12 @@ body {
 
 span {
   display: block;
+  position: absolute;
+  /* align-self: center; */
+  top: 25%;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .playing {
@@ -85,3 +93,10 @@ span {
   box-shadow: 0 0 10px rgb(255, 240, 154);
   transform: scale(1.1);
 } */
+
+@media (min-width: 960px) {
+  .key {
+    width: 12rem;
+    padding-bottom: 90%;
+  }
+}
