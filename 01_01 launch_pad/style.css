@@ -11,7 +11,7 @@ body {
   gap: 16px 16px;
   width: 100vw;
   height: 100vh;
-  grid-template-columns: 20% 1fr 1fr 1fr 20%;
+  grid-template-columns: 15% 1fr 1fr 1fr 15%;
   grid-template-rows: 15% 1fr 1fr 1fr 40%;
 }
 .header {
@@ -30,7 +30,7 @@ body {
   padding-bottom: 100%;
   border-radius: 0.7rem;
   background-color: rgba(0, 0, 0, 0.44);
-  font-size: calc(1rem + 1vw);
+  font-size: calc(0.8rem + 1vw);
   text-align: center;
   color: aliceblue;q
 }
@@ -112,9 +112,10 @@ body {
   display: block;
 }
 
-@media (min-width: 960px) {
+@media (max-width: 960px) {
   .key {
-    width: 12rem;
-    padding-bottom: 90%;
+    /* width: 128px;
+    height: 128px;
+    padding-bottom: 90%; */
   }
 }
