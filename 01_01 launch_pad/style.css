@@ -32,8 +32,7 @@ body {
   background-color: rgba(0, 0, 0, 0.44);
   font-size: calc(1rem + 1vw);
   text-align: center;
-  color: aliceblue;
-  cursor: pointer;
+  color: aliceblue;q
 }
 .key_q {
   grid-column: 2;
@@ -72,7 +71,7 @@ body {
   grid-row: 4;
 }
 
-span {
+.key span {
   display: block;
   position: absolute;
   /* align-self: center; */
@@ -88,11 +87,30 @@ span {
   transform: scale(1.1);
 }
 
-/* .key:active {
-  border: solid 4px gold;
-  box-shadow: 0 0 10px rgb(255, 240, 154);
-  transform: scale(1.1);
-} */
+/* modal */
+.modal {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* height: 100%; */
+  left: 0;
+  right: 0;
+  top: -20%;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.dialog {
+  width: 40vw;
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+  text-align: center;
+}
+.dialog span{
+  display: block;
+}
 
 @media (min-width: 960px) {
   .key {
