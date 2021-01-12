@@ -5,9 +5,6 @@
     <title>Scoped CSS Variables and JS</title>
   </head>
   <body>
-    <!-- 3var -->
-    <!-- spacing/ blur/ base color -->
-
     <h2>Update CSS Variables with <span class="hl">JS</span></h2>
 
     <div class="controls">
@@ -19,10 +16,9 @@
         min="10"
         max="200"
         value="10"
+        step="10"
         data-sizing="px"
       />
-      <!-- velog - data-sizing이 뭔지 -->
-      <!-- velog - js에서는 dataset이 프로퍼티?-->
 
       <label for="blur">Blur:</label>
       <input
@@ -47,20 +43,17 @@
         --spacing: 25px;
         --blur: 3px;
       }
-      /* velog - root */
 
       img {
         padding: var(--spacing);
         background-color: var(--base);
         filter: blur(var(--blur));
-        /* velog - filter, blur */
       }
 
       .hl {
         color: var(--base);
       }
       /*
-      misc styles, nothing to do with CSS variables
     */
 
       body {
@@ -85,33 +78,19 @@
       const inputs = document.querySelectorAll(".controls input");
 
       function handelUpdates() {
-        // addEventListener의 값이 콘솔에 찍힘
-        // console.log(this.value);
-
-        // console.log(this.dataset);
         const suffix = this.dataset.sizing || "";
-        // console.log(suffix);
-        // || "" <- 이거 왜 쓰는지 모르겠음
-
-        // console.log(this.name);
         document.documentElement.style.setProperty(
           `--${this.name}`,
           this.value + suffix
         );
-        // 여기가 제일 중요한 부분이라고 할 수 있음
       }
 
-      // 바뀔 때 마다
       inputs.forEach((input) =>
         input.addEventListener("change", handelUpdates)
       );
-      // 마우스가 움직일 때마다
       inputs.forEach((input) =>
         input.addEventListener("mousemove", handelUpdates)
       );
-
-      // 응용 - 이걸 이용해서 블로그라든지.. 뭐 썸내일 만들기 좋을 듯
-      // 어두운 모드, 밝은 모두 모두 지원하면 좋을 듯
     </script>
   </body>
 </html>
