@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>thumnail maker</title>
+  </head>
+  <body>
+    <h1 class="title">Thumbnail maker</h1>
+
+    <div class="control_box">
+      <span class="controls">Controls</span>
+
+      <!-- words -->
+      <label
+        >글자 입력:
+        <input type="text" />
+      </label>
+      <label
+        >폰트 선택:
+        <input type="text" />
+      </label>
+      <label
+        >폰트 크키:
+        <input
+          type="range"
+          name="font_size"
+          min="12"
+          max="72"
+          value="12"
+          data-sizing="px"
+        />
+      </label>
+      <lable
+        >Font-color
+        <input type="color" name="color" />
+      </lable>
+
+      <!-- background -->
+      <label
+        >background-color
+        <input type="color" name="background_color" />
+      </label>
+      <label
+        >background-img
+        <input type="file" name="background-img" accept="image/*" />
+      </label>
+      <lable
+        >spacing
+        <input
+          type="range"
+          name="spacing"
+          min="10"
+          max="200"
+          value="10"
+          data-sizing="px"
+        />
+      </lable>
+      <lable for="blur"
+        >Blur:
+        <input
+          type="range"
+          name="blur"
+          min="0"
+          max="25"
+          value="5"
+          data-sizing="px"
+        />
+      </lable>
+      <button clas="save">저장하기</button>
+    </div>
+
+    <div class="img_containter"></div>
+
+    <!-- 어두운 모드,밝은 모두 모두 지원하면 좋을 듯 -->
+  </body>
+</html>
