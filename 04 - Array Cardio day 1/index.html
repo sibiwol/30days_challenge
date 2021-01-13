@@ -87,6 +87,20 @@
 
       // Array.prototype.sort()
       // 3. Sort the inventors by birthdate, oldest to youngest
+      // 3. inventors의 생일을 나이 많은 순에서 어린순으로 정렬하라
+      console.log("3번 문제");
+      const ordered1 = inventors.sort(function (a, b) {
+        if (a.year > b.year) {
+          return 1;
+        } else {
+          return -1;
+        }
+      });
+      const ordered2 = inventors.sort((a, b) => (a.year > b.year ? 1 : -1));
+      const ordered3 = inventors.sort((a, b) => a.year - b.year);
+      console.table(ordered1);
+      // console.table(ordered2);
+      // console.table(ordered3);
 
       // Array.prototype.reduce()
       // 4. How many years did all the inventors live all together?
