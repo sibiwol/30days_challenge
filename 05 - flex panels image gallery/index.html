@@ -146,6 +146,25 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+      const panels = document.querySelectorAll(".panel");
+
+      function toggleOpen() {
+        this.classList.toggle("open");
+        // toggle 메서드. ()안에 .넣으면 안됨
+      }
+      function toggleActive(e) {
+        console.log(e.propertyName);
+        if (e.propertyName.includes("flex")) {
+          this.classList.toggle("open-active");
+        }
+        // toggle 메서드. ()안에 .넣으면 안됨
+      }
+
+      panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
+      panels.forEach((panel) =>
+        panel.addEventListener("transitionend", toggleActive)
+      );
+    </script>
   </body>
 </html>
