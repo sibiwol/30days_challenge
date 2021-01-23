@@ -26,14 +26,12 @@
 
       // Some and Every Checks
       // Array.prototype.some() // is at least one person 19 or older?
-      // 19살 또는 그보다 나이 많은 사람이 한 명이라도 있습니까?
       const isAdult = people.some(
         (person) => new Date().getFullYear() - person.year >= 19
       );
       console.log({ isAdult });
 
       // Array.prototype.every() // is everyone 19 or older?
-      // 모두가 성인입니까?
       const allAdult = people.every(
         (person) => new Date().getFullYear() - person.year >= 19
       );
@@ -42,20 +40,16 @@
       // Array.prototype.find()
       // Find is like filter, but instead returns just the one you are looking for
       // find the comment with the ID of 823423
-      // find()는 필터같지만 당신이 찾는 하나의 값만 반환합니다.
-      // 823423의 아이디를 가질 comment를 찾으시오
       const comment = comments.find((comment) => comment.id === 823423);
       console.log({ comment });
 
       // Array.prototype.findIndex()
       // Find the comment with this ID
       // delete the comment with the ID of 823423
-      // 이 아이디를 가진 comment를 찾으시오
-      // id가 823423인 comment를 삭제하시오.
-      console.log("여기까지");
       const index = comments.findIndex((comment) => comment.id === 823423);
       console.table({ index });
 
+      // ...스프레드가 뭘까?
       const newComments = [
         ...comments.slice(0, index),
         ...comments.slice(index + 1),
