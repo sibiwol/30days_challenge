@@ -104,10 +104,9 @@
 
         if (e.shiftKey && this.checked) {
           checkboxes.forEach((checkbox) => {
-            console.log(checkbox);
             if (checkbox === this || checkbox === lastChecked) {
               inBetween = !inBetween;
-              console.log("checked!!");
+              console.log("shiftKey and checked!!");
             }
             // checked 사이에 있으면 check박스 checked 상태로
             if (inBetween) {
@@ -116,6 +115,7 @@
           });
         }
         lastChecked = this;
+        console.log("checked");
       }
 
       checkboxes.forEach((checkbox) =>
