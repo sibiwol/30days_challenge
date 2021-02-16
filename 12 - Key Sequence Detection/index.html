@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+  </head>
+  <body>
+    <script
+      type="text/javascript"
+      src="https://www.cornify.com/js/cornify.js"
+    ></script>
+    <script>
+      // key값을 pressed배열 안에 넣는다
+      const pressed = [];
+      const secretCode = "love";
+
+      function spliceLetter(e) {
+        pressed.push(e.key);
+        pressed.splice(
+          -secretCode.length - 1,
+          pressed.length - secretCode.length
+        );
+        console.log(pressed);
+      }
+
+      function patchSticker() {
+        if (pressed.join("").includes(secretCode)) {
+          cornify_add();
+        }
+      }
+
+      window.addEventListener("keyup", spliceLetter);
+      window.addEventListener("keyup", patchSticker);
+    </script>
+  </body>
+</html>
