@@ -38,6 +38,11 @@ h1 {
   margin-left: 20px;
 }
 
+/* .slide-in {
+  visibility: hidden;
+  transition: all 0.5s;
+} */
+
 .slide-in {
   opacity: 0;
   transition: all 0.5s;
@@ -51,6 +56,10 @@ h1 {
   transform: translateX(30%) scale(0.95);
 }
 
+/* .slide-in.active {
+  visibility: visible;
+  transform: translateX(0%) scale(1);
+} */
 .slide-in.active {
   opacity: 1;
   transform: translateX(0%) scale(1);
