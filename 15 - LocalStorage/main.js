@@ -16,6 +16,7 @@ function addItem(e) {
 }
 
 function populateList(plates = [], platesList) {
+  console.log(plates);
   platesList.innerHTML = plates
     .map((plate, i) => {
       return `
@@ -33,7 +34,7 @@ function populateList(plates = [], platesList) {
 function toggleDone(e) {
   const el = e.target;
   const index = el.dataset.index;
-  // stopt this unless it's an input
+  // stop this unless it's an input
   items[index].done = !items[index].done;
   localStorage.setItem("items", JSON.stringify(items));
   if (!el.matches("input")) return;
