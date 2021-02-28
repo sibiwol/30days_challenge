@@ -8,29 +8,12 @@
     <div class="words" contenteditable></div>
 
     <script>
-      // window.SpeechRecognition =
-      //   window.SpeechRecognition || window.webkitSpeechRecognition;
-
-      // const recognition = new SpeechRecognition();
-      // recognition.interimResults = true;
-
-      // let p = document.createElement("p");
-      // const words = document.querySelector(".words");
-      // words.appendChild(p);
-
-      // recognition.addEventListener("result", (e) => {
-      //   console.log(e.results);
-
-      // });
-
-      // recognition.start();
-
       window.SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
 
       const recognition = new SpeechRecognition();
       recognition.interimResults = true;
-      recognition.lang = "en-US";
+      recognition.lang = "ko" || "en-US";
 
       let p = document.createElement("p");
       const words = document.querySelector(".words");
@@ -52,7 +35,6 @@
         if (transcript.includes("unicorn")) {
           console.log("🦄");
         }
-        console.log(transcript);
       });
 
       recognition.addEventListener("end", recognition.start);
